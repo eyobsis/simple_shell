@@ -20,5 +20,6 @@ void env(void);
 extern char **environ;
 int change_directory(const char *path);
 char *tokenize(char *line);
+char *_getenv(char *var);
 
 #endif
