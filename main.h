@@ -22,7 +22,7 @@ void env(void);
 extern char **environ;
 int change_directory(const char *path);
 char *_getenv(char *var);
-int interactive();
+int interactive(void);
 int non_interactive(char *line);
 
 #endif
