@@ -8,7 +8,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <errno.h>
-
+#include <fcntl.h>
 
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
@@ -22,5 +22,7 @@ void env(void);
 extern char **environ;
 int change_directory(const char *path);
 char *_getenv(char *var);
+int interactive();
+int non_interactive(char *line);
 
 #endif
