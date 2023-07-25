@@ -2,11 +2,10 @@
 #include "printf.h"
 
 /**
- * check_for_bin -checks if the command starts with bin
- *
+ * check_for_bin - checks if the command starts with bin
  * @av2: the command
  *
- * Return: 5 if it's a match
+ * Return: 5 if it's a match, anything else if not
  */
 
 int check_for_bin(char *av2[100])
@@ -22,5 +21,6 @@ int check_for_bin(char *av2[100])
 		if (cmd[j] == av2[0][j])
 			a++;
 	}
-return (a);
+
+	return (a);
 }

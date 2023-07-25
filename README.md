@@ -14,7 +14,7 @@
 - What is EOF / “end-of-file”?
 
 # Authors
-1. Benoni Esckinder   
+1. Benoni Esckinder
 - Email address ` besckinder@gmail.com `
 2. Eyob sisay
 - Email address ` ehtube2020@gmail.com `
