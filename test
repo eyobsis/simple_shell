@@ -25,4 +25,6 @@ echo "env" | valgrind --leak-check=full --show-leak-kinds=all --track-origins=ye
 
 echo "    env    " | valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./hsh
 
+valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./hsh file
+
 valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes -s ./hsh

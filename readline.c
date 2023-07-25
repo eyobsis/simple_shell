@@ -1,3 +1,6 @@
+#include "main.h"
+#include "printf.h"
+
 /**
  * readline - custom readline, reads from the command line
  * @fd: file descriptor

@@ -24,5 +24,5 @@ int change_directory(const char *path);
 char *_getenv(char *var);
 int interactive(void);
 int non_interactive(char *line);
-
+int readline(int fd, char *buffer, int max_len);
 #endif

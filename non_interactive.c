@@ -1,3 +1,6 @@
+#include "main.h"
+#include "printf.h"
+
 /**
  * non_interactive - executes the shell in non interactive mode
  * @line: gets the command straight from the command line
