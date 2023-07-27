@@ -45,7 +45,7 @@ int interactive(unsigned int count)
 			execute(tokens, a, count);
 		else
 		{
-			count ++;
+			count++;
 			wait(&status);
 			free(line); }}
 	return (0); }
