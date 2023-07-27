@@ -32,7 +32,6 @@ int non_interactive(char *line)
 	if (_strcmp(*tokens, "exit") == 0)
 		return  (0);
 	a = check_for_bin(tokens);
-	_printf("%d", 5);
 	pid = fork();
 	if (pid == -1)
 	{
