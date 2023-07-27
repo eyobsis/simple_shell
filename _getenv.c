@@ -21,7 +21,7 @@ char *_getenv(char *var)
 
 		if (_strcmp(var, buf) == 0)
 		{
-			path = malloc(sizeof(environ[i] - 4));
+			path = malloc(sizeof(environ[i]));
 			path = environ[i] + 5;
 		}
 	}

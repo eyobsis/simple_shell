@@ -13,7 +13,7 @@ int non_interactive(char *line)
 	char *token = NULL, *tokens[100] = { NULL };
 	char *delim = " \n\t\r\a";
 	pid_t pid = 0;
-	int i = 0, a = 0, status = 0;
+	int i = 0, a = 0, status = 0, count = 0;
 
 	if (line == NULL)
 	{
@@ -32,16 +32,16 @@ int non_interactive(char *line)
 	if (_strcmp(*tokens, "exit") == 0)
 		return  (0);
 	a = check_for_bin(tokens);
+	_printf("%d", 5);
 	pid = fork();
 	if (pid == -1)
 	{
 		perror("fork: ");
 		return (EXIT_SUCCESS); }
 	if (pid == 0) /* run execve in a child process */
-		execute(tokens, a);
+		execute(tokens, a, count);
 	else
 		wait(&status);
-
 	return (0);
 }
 

@@ -20,10 +20,11 @@ void execute_bin(char **av)
  * execute - executes the given commands
  * @av: takes in the command
  * @a: 5 if the command starts with "/bin/"
+ * @count: the command number
  * return: None
  */
 
-void execute(char **av, int a)
+void execute(char **av, int a, int count)
 {
 	char *full_path = NULL, *path = NULL, *token = NULL, *delim = ":";
 	size_t dir_len = 0, cmd_len = 0, slash_len = 1;
@@ -63,5 +64,5 @@ void execute(char **av, int a)
 			token = strtok(NULL, delim); }}
 	if (token == NULL)
 	{
-		_printf("hsh: %s: command not found\n", av[0]);
+		_printf("hsh: %u: %s: not found\n", count, av[0]);
 		exit(EXIT_SUCCESS); }}

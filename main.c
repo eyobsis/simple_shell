@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 	int fd = 0;
 	char line[100] = "";
 	int a = 0;
+	unsigned int count = 1;
 
 	if (argc == 2)
 	{
@@ -22,7 +23,7 @@ int main(int argc, char *argv[])
 		fd = open(argv[1], O_RDONLY);
 		if (fd == -1)
 		{
-			perror("file couldn't be opened");
+			_printf("hsh: %d: Can't open %s\n", 0, argv[1]);
 			return (EXIT_SUCCESS);
 		}
 
@@ -30,6 +31,6 @@ int main(int argc, char *argv[])
 			a = non_interactive(line);
 	}
 	else
-		a = interactive();
+		a = interactive(count);
 	return (a);
 }

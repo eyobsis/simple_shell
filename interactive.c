@@ -3,11 +3,11 @@
 
 /**
  * interactive - executes the shell in interactive mode
- *
+ * @count: command number
  * Return: Always 0
  */
 
-int interactive(void)
+int interactive(unsigned int count)
 {
 	while (1) /* Infinite loop */
 	{
@@ -42,9 +42,10 @@ int interactive(void)
 			perror("fork: ");
 			return (EXIT_SUCCESS); }
 		if (pid == 0) /* run execve in a child process */
-			execute(tokens, a);
+			execute(tokens, a, count);
 		else
 		{
+			count ++;
 			wait(&status);
 			free(line); }}
 	return (0); }
