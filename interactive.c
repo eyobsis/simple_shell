@@ -34,7 +34,7 @@ int interactive(unsigned int count)
 		if (_strcmp(*tokens, "exit") == 0)
 		{
 			free(line);
-			return (0); }
+			return (EXIT_SUCCESS); }
 		a = check_for_bin(tokens);
 		pid = fork();
 		if (pid == -1)
@@ -48,4 +48,4 @@ int interactive(unsigned int count)
 			count++;
 			wait(&status);
 			free(line); }}
-	return (0); }
+	return (EXIT_SUCCESS); }

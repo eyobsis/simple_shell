@@ -7,11 +7,11 @@
  * Return: None
  */
 
-void execute_bin(char **av)
+void execute_bin(char **av,int count)
 {
 	if ((execve(av[0], av, environ)) == 0)
 	{
-		perror("execve");
+		_printf("hsh: %u: %s: not found", count, av[0]);
 		exit(EXIT_SUCCESS);
 	}
 }
@@ -30,7 +30,7 @@ void execute(char **av, int a, int count)
 	size_t dir_len = 0, cmd_len = 0, slash_len = 1;
 
 	if (a == 5)
-		execute_bin(av);
+		execute_bin(av, count);
 	path = _getenv("PATH");
 	if (path == NULL || *path == '\0')
 	{

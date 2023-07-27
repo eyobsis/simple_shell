@@ -28,9 +28,9 @@ int non_interactive(char *line)
 		token = strtok(NULL, delim);
 		i++;	}
 	if (*tokens == NULL)
-		return (0);
+		return (EXIT_SUCCESS);
 	if (_strcmp(*tokens, "exit") == 0)
-		return  (0);
+		return  (EXIT_SUCCESS);
 	a = check_for_bin(tokens);
 	_printf("%d", 5);
 	pid = fork();
