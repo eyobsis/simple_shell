@@ -18,10 +18,10 @@ int non_interactive(char *line)
 	if (line == NULL)
 	{
 	perror("malloc failure");
-		return (0); }
+		return (EXIT_SUCCESS); }
 	token = strtok(line, delim);
 	if (token == NULL)
-		return (0);
+		return (EXIT_SUCCESS);
 	while (token != NULL && i < 99)
 	{
 		tokens[i] = token;
@@ -32,7 +32,6 @@ int non_interactive(char *line)
 	if (_strcmp(*tokens, "exit") == 0)
 		return  (EXIT_SUCCESS);
 	a = check_for_bin(tokens);
-	_printf("%d", 5);
 	pid = fork();
 	if (pid == -1)
 	{

@@ -29,6 +29,10 @@ void execute(char **av, int a, int count)
 	char *full_path = NULL, *path = NULL, *token = NULL, *delim = ":";
 	size_t dir_len = 0, cmd_len = 0, slash_len = 1;
 
+	if(_strcmp("env", av[0]) == 0)
+	{
+		env();
+		exit(EXIT_SUCCESS); }
 	if (a == 5)
 		execute_bin(av, count);
 	path = _getenv("PATH");
