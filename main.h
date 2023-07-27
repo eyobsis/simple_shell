@@ -10,7 +10,6 @@
 #include <errno.h>
 #include <fcntl.h>
 
-
 char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strcpy(char *dest, const char *src);
@@ -26,11 +25,4 @@ char *_getenv(char *var);
 int interactive(unsigned int count);
 int non_interactive(char *line);
 int readline(int fd, char *buffer, int max_len);
-void print_env(void);
-int env_command(void);
-int my_atoi(char *str);
-void execute_builtins(char **av, int is_builtin);
-void exit_command(int exit_status);
-int set_env(char **tokens);
-int unset_env(char **tokens);
 #endif

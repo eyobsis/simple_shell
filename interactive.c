@@ -15,7 +15,6 @@ int interactive(unsigned int count)
 		char *delim = " \n\t\r\a;";
 		pid_t pid = 0;
 		int i = 0, a = 0, status = 0;
-		unsigned int exit_status = 0;
 
 		line = get_command();
 		if (line == NULL)
@@ -34,21 +33,8 @@ int interactive(unsigned int count)
 			continue; }
 		if (_strcmp(*tokens, "exit") == 0)
 		{
-			if (i == 2 && tokens[1])
-				exit_status = my_atoi(tokens[1]);
-			exit_command(exit_status); }
-		else if (_strcmp(*tokens, "setenv") == 0)
-		{
-			if (set_env(tokens) == -1)
-			_printf("setenv:invalid arg\n", stderr);
-				free(line);
-				continue; }
-		else if (_strcmp(*tokens, "unsetenv") == 0)
-		{
-			if (unset_env(tokens) == -1)
-			_printf("unsetenv:invalid arg\n", stderr);
-				free(line);
-				continue; }
+			free(line);
+			return (0); }
 		a = check_for_bin(tokens);
 		pid = fork();
 		if (pid == -1)
@@ -61,6 +47,5 @@ int interactive(unsigned int count)
 		{
 			count++;
 			wait(&status);
-			free(line);
-		}}
+			free(line); }}
 	return (0); }
